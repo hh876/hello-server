@@ -1,8 +1,8 @@
-package com.yjj.helloserver.entity;
+package com.yjj.helloserver.dto;
 import lombok.Data;
+
 @Data
-public class User {
-    private Long id;
+public class UserDTO {
     private String username;
     private String password;
 }

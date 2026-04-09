@@ -1,30 +1,27 @@
 package com.yjj.helloserver.common;
 
+import lombok.Data;
+
+@Data
 public class Result<T> {
-    private Integer code;
+    private int code;
     private String msg;
     private T data;
 
+    // 成功响应
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>();
-        result.setCode(ResultCode.SUCCESS.getCode());
-        result.setMsg(ResultCode.SUCCESS.getMsg());
+        result.setCode(200);
+        result.setMsg("操作成功");
         result.setData(data);
         return result;
     }
 
+    // 核心：接收 ResultCode 的错误响应（解决你报错的关键）
     public static <T> Result<T> error(ResultCode resultCode) {
         Result<T> result = new Result<>();
         result.setCode(resultCode.getCode());
         result.setMsg(resultCode.getMsg());
-        result.setData(null);
         return result;
     }
-
-    public Integer getCode() { return code; }
-    public void setCode(Integer code) { this.code = code; }
-    public String getMsg() { return msg; }
-    public void setMsg(String msg) { this.msg = msg; }
-    public T getData() { return data; }
-    public void setData(T data) { this.data = data; }
 }

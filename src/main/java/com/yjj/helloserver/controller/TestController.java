@@ -6,12 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/test")
 public class TestController {
 
-    // 接口地址：http://localhost:8080/api/test
-    @GetMapping("/test")
-    public Result<String> test() {
-        return Result.success("测试接口访问成功！");
+    @GetMapping("/hello")
+    public Result<String> hello() {
+        return Result.success("项目运行成功！");
     }
 }

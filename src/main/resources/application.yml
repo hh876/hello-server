@@ -1,0 +1,14 @@
+server:
+  port: 8081  # 换个端口，避免冲突
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: jiangjie06.  # 这里改成你自己的MySQL密码
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
