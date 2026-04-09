@@ -7,16 +7,16 @@ public class Result<T> {
 
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>();
-        result.setCode(ResultCode.SUCCESS.getCode());
-        result.setMsg(ResultCode.SUCCESS.getMsg());
+        result.setCode(200);
+        result.setMsg("操作成功");
         result.setData(data);
         return result;
     }
 
-    public static <T> Result<T> error(ResultCode resultCode) {
+    public static <T> Result<T> error(String msg) {
         Result<T> result = new Result<>();
-        result.setCode(resultCode.getCode());
-        result.setMsg(resultCode.getMsg());
+        result.setCode(500);
+        result.setMsg(msg);
         result.setData(null);
         return result;
     }
