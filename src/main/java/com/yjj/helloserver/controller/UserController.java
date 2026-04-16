@@ -4,14 +4,14 @@ import com.yjj.helloserver.common.Result;
 import com.yjj.helloserver.dto.UserDTO;
 import com.yjj.helloserver.entity.User;
 import com.yjj.helloserver.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserService userService;
 
     @PostMapping("/register")
