@@ -15,11 +15,13 @@
     <artifactId>helloserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-<<<<<<< HEAD
-    <!-- 阿里云镜像，解决下载失败问题 -->
-=======
-    <!-- 阿里云镜像，确保依赖下载成功 -->
->>>>>>> origin/master
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <repositories>
         <repository>
             <id>aliyunmaven</id>
@@ -34,38 +36,28 @@
     </repositories>
 
     <dependencies>
-        <!-- Spring Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<<<<<<< HEAD
 
-        <!-- Lombok -->
-=======
->>>>>>> origin/master
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-<<<<<<< HEAD
         </dependency>
 
-        <!-- 正确的MyBatis-Plus依赖（修正拼写错误） -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.3.1</version>
         </dependency>
 
-        <!-- MySQL驱动，带正确版本号 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
             <scope>runtime</scope>
-=======
->>>>>>> origin/master
         </dependency>
     </dependencies>
 
