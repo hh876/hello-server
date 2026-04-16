@@ -1,14 +1,15 @@
 server:
-  port: 8081  # 换个端口，避免冲突
+  port: 8081
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/helloserver?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: root
-    password: jiangjie06.  # 这里改成你自己的MySQL密码
+    password: jiangjie06.
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.yjj.helloserver.entity

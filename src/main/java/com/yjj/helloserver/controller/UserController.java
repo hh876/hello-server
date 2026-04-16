@@ -2,16 +2,16 @@ package com.yjj.helloserver.controller;
 
 import com.yjj.helloserver.common.Result;
 import com.yjj.helloserver.dto.UserDTO;
-import com.yjj.helloserver.entity.User;
 import com.yjj.helloserver.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-    @Resource
+    @Autowired
     private UserService userService;
 
     @PostMapping("/register")
@@ -24,8 +24,12 @@ public class UserController {
         return userService.login(dto);
     }
 
-    @GetMapping("/{id}")
-    public Result<User> getById(@PathVariable Long id) {
-        return userService.getById(id);
+    // 作业分页接口
+    @GetMapping("/page")
+    public Result<Object> getUserPage(
+            @RequestParam(defaultValue = "1") Integer pageNum,
+            @RequestParam(defaultValue = "5") Integer pageSize
+    ) {
+        return userService.getUserPage(pageNum, pageSize);
     }
 }
