@@ -10,4 +10,4 @@ public class HelloServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(HelloServerApplication.class, args);
     }
-}
+}   

@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Result<T> {
-    private int code;
+    private Integer code;
     private String msg;
     private T data;
 
-    // 成功响应
+    // 成功返回
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>();
         result.setCode(200);
@@ -17,11 +17,12 @@ public class Result<T> {
         return result;
     }
 
-    // 核心：接收 ResultCode 的错误响应（解决你报错的关键）
-    public static <T> Result<T> error(ResultCode resultCode) {
+    // 双参数错误返回（自定义code+msg，彻底解决你所有参数报错）
+    public static <T> Result<T> error(Integer code, String msg) {
         Result<T> result = new Result<>();
-        result.setCode(resultCode.getCode());
-        result.setMsg(resultCode.getMsg());
+        result.setCode(code);
+        result.setMsg(msg);
+        result.setData(null);
         return result;
     }
 }

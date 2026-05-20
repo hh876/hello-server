@@ -4,12 +4,21 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/helloserver?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/helloserver?useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: jiangjie06.
+    password: root
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+# 直接写死api-key，不用系统环境变量，彻底解决占位符找不到问题
+ai:
+  dashscope:
+    api-key: sk-xxxxxxxxxxxxxxxxxxxxxx  # 换成你自己的真实key
 
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.yjj.helloserver.entity

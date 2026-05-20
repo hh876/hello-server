@@ -1,19 +1,19 @@
 package com.yjj.helloserver.common;
 
 public enum ResultCode {
-    USER_EXIST(501, "用户名已存在"),
-    USER_NOT_EXIST(502, "用户不存在"),
-    PASSWORD_ERROR(503, "密码错误");
+    USER_NOT_EXIST(404,"用户不存在"),
+    USER_EXIST(501,"用户已存在"),
+    PASSWORD_ERROR(401,"密码错误");
 
-    private int code;
-    private String msg;
+    private final Integer code;
+    private final String msg;
 
-    ResultCode(int code, String msg) {
+    ResultCode(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 
